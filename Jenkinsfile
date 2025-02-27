@@ -29,6 +29,11 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
+                bat (
+                    script: """
+                        exit 1
+                    """
+                )
                 echo (message: 'Clean')
                 cleanWs()
             }
