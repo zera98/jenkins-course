@@ -33,6 +33,14 @@ pipeline {
                 cleanWs()
             }
         }
+        stage('Dynamic') {
+            when {
+                branch 'feature/multi/*'
+            }
+            steps {
+                echo (message: 'Dynamic')
+            }
+        }
         stage('Download') {
             steps {
                 echo (message: 'Download')
